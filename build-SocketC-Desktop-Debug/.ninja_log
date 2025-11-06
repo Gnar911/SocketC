@@ -1,0 +1,7 @@
+# ninja log v5
+0	6	1762413163234284363	CMakeFiles/ServerConcur.dir/src/server/concurrent-server-unix.c.o	414740578d00b670
+1	7	1762413163234284363	CMakeFiles/ServerConcur.dir/src/error.c.o	e6c02e27ce6ae698
+1	7	1762413163235284406	CMakeFiles/ServerConcur.dir/src/server/wrapsock.c.o	7cdf80d42701cba4
+1	7	1762413163235284406	CMakeFiles/ServerConcur.dir/src/server/wrapunix.c.o	9452bb35012d7b82
+2	7	1762413163235284406	CMakeFiles/ServerConcur.dir/src/server/wraplib.c.o	ac6aae79fc66ba8a
+7	33	1762413163261285536	ServerConcur	65f8c44f39a90c4

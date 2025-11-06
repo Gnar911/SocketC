@@ -92,22 +92,22 @@ Malloc(size_t size)
 	return(ptr);
 }
 
-int
-Mkstemp(char *template)
-{
-	int i;
+//int
+//Mkstemp(char *template)
+//{
+//	int i;
 
-#ifdef HAVE_MKSTEMP
-	if ((i = mkstemp(template)) < 0)
-		err_quit("mkstemp error");
-#else
-	if (mktemp(template) == NULL || template[0] == 0)
-		err_quit("mktemp error");
-	i = Open(template, O_CREAT | O_WRONLY, FILE_MODE);
-#endif
+//#ifdef HAVE_MKSTEMP
+//	if ((i = mkstemp(template)) < 0)
+//		err_quit("mkstemp error");
+//#else
+//	if (mktemp(template) == NULL || template[0] == 0)
+//		err_quit("mktemp error");
+//	i = Open(template, O_CREAT | O_WRONLY, FILE_MODE);
+//#endif
 
-	return i;
-}
+//	return i;
+//}
 
 // So on Window it is CreateFileMapping() / MapViewOfFile()
 #ifdef _WIN32
