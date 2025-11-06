@@ -1,4 +1,4 @@
-# Install script for directory: /home/gnar911/Desktop/20251106-SocketC
+# Install script for directory: /home/gnar911/Desktop/20251106-SocketC/SocketC
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

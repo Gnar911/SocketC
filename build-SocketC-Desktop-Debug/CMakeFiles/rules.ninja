@@ -99,7 +99,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/gnar911/Desktop/20251106-SocketC -B/home/gnar911/Desktop/build-SocketC-Desktop-Debug
+  command = /usr/bin/cmake --regenerate-during-build -S/home/gnar911/Desktop/20251106-SocketC/SocketC -B/home/gnar911/Desktop/build-SocketC-Desktop-Debug
   description = Re-running CMake...
   generator = 1
 
