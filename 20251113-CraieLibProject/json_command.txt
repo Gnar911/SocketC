@@ -1,0 +1,29 @@
+{
+  "poinumber": "1",
+  "firstpoi": {
+    "name": "gufo （グーフォ） 中野 野方 ペット・絵本・雑貨",
+    "latitude": "35.7193889",
+    "longitude": "139.6534237",
+    "text": "poi12222 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "secondpoi": {
+    "name": "paw's living カメイドクロック店",
+    "latitude": "35.6959724",
+    "longitude": "139.8292362",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "thirdpoi": {
+    "name": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7297574",
+    "longitude": "139.6571914",
+    "text": "poi23 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "imagepath": "C:\\26062025_Android_app\\10072025-VerifyOutput\\30092025-Craie2-dev-phase\\img4.jpg",
+  "status": "0"
+}

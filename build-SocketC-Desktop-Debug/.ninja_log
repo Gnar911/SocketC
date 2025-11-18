@@ -1,8 +1,0 @@
-# ninja log v5
-0	76	1762416311988524127	CMakeFiles/Client2.dir/src/client/echo_client.c.o	4f9d6a0e0ff8dc36
-0	78	1762416311991524119	CMakeFiles/Client2.dir/src/error.c.o	2d9dd08ccfdbaebe
-1	75	1762416311988524127	CMakeFiles/Client2.dir/src/wraplib.c.o	e5b013f178997ce4
-1	82	1762416311995524108	CMakeFiles/Client2.dir/src/wrapsock.c.o	5cd37988349b9316
-1	76	1762416328684480186	CMakeFiles/Client2.dir/src/wrapunix.c.o	729913d7ba2f92c7
-77	102	1762417183516702959	Client2	865c8c6e39628d03
-1	77	1762417183490703405	CMakeFiles/Client2.dir/src/wrapstdio.c.o	7a4ac0c30bc317ff

@@ -1,0 +1,50 @@
+{
+  "driving_state": 4,
+  "image": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img2.png",
+  "llm" : 
+  {
+	"text": "descriptionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaト ピッツァ＆aaa",
+	"imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img2.png",
+	"status": "1"
+  },
+  "poi_list": 
+ {
+  "poinumber": "1",
+  "firstpoi": {
+    "name": "（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7193889",
+    "longitude": "139.6534237",
+    "text": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "secondpoi": {
+    "name": "paw's living カメイドクロック店",
+    "latitude": "35.6959724",
+    "longitude": "139.8292362",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+
+  "thirdpoi": {
+    "name": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7297574",
+    "longitude": "139.6571914",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img2.png",
+  "status": "1"
+},
+
+  "start_pairing_tablet": 1,
+  "reset_craie_config": 1,
+  "tablet_display_mode": 0,
+  "text_summary" : {
+  	"text": "p2dcriptss2ison",
+  	"seat_id": 3
+  }
+}
+

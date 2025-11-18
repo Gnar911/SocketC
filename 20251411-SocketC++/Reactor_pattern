@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html class="client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Reactor pattern - Wikipedia</title>
+<script>(function(){var className="client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available";var cookie=document.cookie.match(/(?:^|; )enwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"5667fd4c-7a52-474c-bb76-6ebefdbe0dfd","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Reactor_pattern","wgTitle":"Reactor pattern","wgCurRevisionId":1307945274,"wgRevisionId":1307945274,"wgArticleId":12501787,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles with short description","Short description is different from Wikidata","All articles with unsourced statements","Articles with unsourced statements from September 2023","Articles with unsourced statements from February 2025","Concurrent computing","Events (computing)","Software design patterns"],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Reactor_pattern","wgRelevantArticleId":12501787,"wgTempUserName":null,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgNoticeProject":"wikipedia","wgFlaggedRevsParams":{"tags":{"status":{"levels":1}}},"wgConfirmEditCaptchaNeededForGenericEdit":false,"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsFlags":0,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":true,"watchlist":true,"tagline":false,"nearby":true},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":10000,"wgMetricsPlatformUserExperiments":{"active_experiments":[],"overrides":[],"enrolled":[],"assigned":[],"subject_ids":[],"sampling_units":[]},"wgEditSubmitButtonLabelPublish":true,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":false,"wgVector2022LanguageInHeader":true,"wgULSisLanguageSelectorEmpty":false,"wgWikibaseItemId":"Q1122024","wgCheckUserClientHintsHeadersJsApi":["brands","architecture","bitness","fullVersionList","mobile","model","platform","platformVersion"],"GEHomepageSuggestedEditsEnableTopics":true,"wgGESuggestedEditsTaskTypes":{"taskTypes":["copyedit","link-recommendation"],"unavailableTaskTypes":[]},"wgGETopicsMatchModeEnabled":false,"wgGELevelingUpEnabledForUser":false};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","mediawiki.page.gallery.styles":"ready","ext.wikimediamessages.styles":"ready","skins.vector.search.codex.styles":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","jquery.makeCollapsible.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.xLab","ext.cite.ux-enhancements","site","mediawiki.page.ready","jquery.makeCollapsible","mediawiki.toc","skins.vector.js","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.gadget.ReferenceTooltips","ext.gadget.switcher","ext.urlShortener.toolbar","ext.centralauth.centralautologin","mmv.bootstrap","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.echo.centralauth","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.cx.uls.quick.actions","wikibase.client.vector-2022","ext.checkUser.clientHints","ext.growthExperiments.SuggestedEditSession"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediamessages.styles%7Cjquery.makeCollapsible.styles%7Cmediawiki.page.gallery.styles%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector-2022">
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector-2022"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector-2022">
+<meta name="generator" content="MediaWiki 1.46.0-wmf.2">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<meta property="og:title" content="Reactor pattern - Wikipedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Reactor_pattern&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/rest.php/v1/search" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Reactor_pattern">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="auth.wikimedia.org">
+</head>
+<body class="skin--responsive skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Reactor_pattern rootpage-Reactor_pattern skin-vector-2022 action-view">
+<div id="mw-aria-live-region" class="mw-aria-live-region" aria-live="polite"></div><a class="mw-jump-link" href="#bodyContent">Jump to content</a>
+<div class="vector-header-container">
+	<header class="vector-header mw-header no-font-mode-scale">
+		<div class="vector-header-start">
+			<nav class="vector-main-menu-landmark" aria-label="Site">
+				
+<div id="vector-main-menu-dropdown" class="vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right"  title="Main menu" >
+	<input type="checkbox" id="vector-main-menu-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-main-menu-dropdown" class="vector-dropdown-checkbox "  aria-label="Main menu"  >
+	<label id="vector-main-menu-dropdown-label" for="vector-main-menu-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-menu mw-ui-icon-wikimedia-menu"></span>
+
+<span class="vector-dropdown-label-text">Main menu</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+				<div id="vector-main-menu-unpinned-container" class="vector-unpinned-container">
+		
+<div id="vector-main-menu" class="vector-main-menu vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-main-menu-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="main-menu-pinned"
+	data-pinnable-element-id="vector-main-menu"
+	data-pinned-container-id="vector-main-menu-pinned-container"
+	data-unpinned-container-id="vector-main-menu-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Main menu</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-main-menu.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-main-menu.unpin">hide</button>
+</div>
+
+	
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation"  >
+	<div class="vector-menu-heading">
+		Navigation
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"><span>Main page</span></a></li><li id="n-contents" class="mw-list-item"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia"><span>Contents</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="/wiki/Portal:Current_events" title="Articles related to current events"><span>Current events</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" title="Visit a randomly selected article [x]" accesskey="x"><span>Random article</span></a></li><li id="n-aboutsite" class="mw-list-item"><a href="/wiki/Wikipedia:About" title="Learn about Wikipedia and how it works"><span>About Wikipedia</span></a></li><li id="n-contactpage" class="mw-list-item"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia"><span>Contact us</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-interaction" class="vector-menu mw-portlet mw-portlet-interaction"  >
+	<div class="vector-menu-heading">
+		Contribute
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-help" class="mw-list-item"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia"><span>Help</span></a></li><li id="n-introduction" class="mw-list-item"><a href="/wiki/Help:Introduction" title="Learn how to edit Wikipedia"><span>Learn to edit</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Wikipedia:Community_portal" title="The hub for editors"><span>Community portal</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="A list of recent changes to Wikipedia [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-upload" class="mw-list-item"><a href="/wiki/Wikipedia:File_upload_wizard" title="Add images or other media for use on Wikipedia"><span>Upload file</span></a></li><li id="n-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages"><span>Special pages</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+				</div>
+
+	</div>
+</div>
+
+		</nav>
+			
+<a href="/wiki/Main_Page" class="mw-logo">
+	<img class="mw-logo-icon" src="/static/images/icons/wikipedia.png" alt="" aria-hidden="true" height="50" width="50">
+	<span class="mw-logo-container skin-invert">
+		<img class="mw-logo-wordmark" alt="Wikipedia" src="/static/images/mobile/copyright/wikipedia-wordmark-en.svg" style="width: 7.5em; height: 1.125em;">
+		<img class="mw-logo-tagline" alt="The Free Encyclopedia" src="/static/images/mobile/copyright/wikipedia-tagline-en.svg" width="117" height="13" style="width: 7.3125em; height: 0.8125em;">
+	</span>
+</a>
+
+		</div>
+		<div class="vector-header-end">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="/wiki/Special:Search" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle" title="Search Wikipedia [f]" accesskey="f"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"></span>
+
+<span>Search</span>
+	</a>
+	<div class="vector-typeahead-search-container">
+		<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail cdx-typeahead-search--auto-expand-width">
+			<form action="/w/index.php" id="searchform" class="cdx-search-input cdx-search-input--has-end-button">
+				<div id="simpleSearch" class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+					<div class="cdx-text-input cdx-text-input--has-start-icon">
+						<input
+							class="cdx-text-input__input mw-searchInput" autocomplete="off"
+							 type="search" name="search" placeholder="Search Wikipedia" aria-label="Search Wikipedia" autocapitalize="sentences" spellcheck="false" title="Search Wikipedia [f]" accesskey="f" id="searchInput"
+							>
+						<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+					</div>
+					<input type="hidden" name="title" value="Special:Search">
+				</div>
+				<button class="cdx-button cdx-search-input__end-button">Search</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+			<nav class="vector-user-links vector-user-links-wide" aria-label="Personal tools">
+	<div class="vector-user-links-main">
+	
+<div id="p-vector-user-menu-preferences" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-vector-user-menu-userpage" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	<nav class="vector-appearance-landmark" aria-label="Appearance">
+		
+<div id="vector-appearance-dropdown" class="vector-dropdown "  title="Change the appearance of the page&#039;s font size, width, and color" >
+	<input type="checkbox" id="vector-appearance-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-appearance-dropdown" class="vector-dropdown-checkbox "  aria-label="Appearance"  >
+	<label id="vector-appearance-dropdown-label" for="vector-appearance-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-appearance mw-ui-icon-wikimedia-appearance"></span>
+
+<span class="vector-dropdown-label-text">Appearance</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+			<div id="vector-appearance-unpinned-container" class="vector-unpinned-container">
+				
+			</div>
+		
+	</div>
+</div>
+
+	</nav>
+	
+<div id="p-vector-user-menu-notifications" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="pt-sitesupport-2" class="user-links-collapsible-item mw-list-item user-links-collapsible-item"><a data-mw="interface" href="https://donate.wikimedia.org/?wmf_source=donate&amp;wmf_medium=sidebar&amp;wmf_campaign=en.wikipedia.org&amp;uselang=en" class=""><span>Donate</span></a>
+</li>
+<li id="pt-createaccount-2" class="user-links-collapsible-item mw-list-item user-links-collapsible-item"><a data-mw="interface" href="/w/index.php?title=Special:CreateAccount&amp;returnto=Reactor+pattern" title="You are encouraged to create an account and log in; however, it is not mandatory" class=""><span>Create account</span></a>
+</li>
+<li id="pt-login-2" class="user-links-collapsible-item mw-list-item user-links-collapsible-item"><a data-mw="interface" href="/w/index.php?title=Special:UserLogin&amp;returnto=Reactor+pattern" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o" class=""><span>Log in</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+	</div>
+	
+<div id="vector-user-links-dropdown" class="vector-dropdown vector-user-menu vector-button-flush-right vector-user-menu-logged-out user-links-collapsible-item"  title="Log in and more options" >
+	<input type="checkbox" id="vector-user-links-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-user-links-dropdown" class="vector-dropdown-checkbox "  aria-label="Personal tools"  >
+	<label id="vector-user-links-dropdown-label" for="vector-user-links-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis"></span>
+
+<span class="vector-dropdown-label-text">Personal tools</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+		
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal user-links-collapsible-item"  title="User menu" >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-sitesupport" class="user-links-collapsible-item mw-list-item"><a href="https://donate.wikimedia.org/?wmf_source=donate&amp;wmf_medium=sidebar&amp;wmf_campaign=en.wikipedia.org&amp;uselang=en"><span>Donate</span></a></li><li id="pt-createaccount" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Reactor+pattern" title="You are encouraged to create an account and log in; however, it is not mandatory"><span class="vector-icon mw-ui-icon-userAdd mw-ui-icon-wikimedia-userAdd"></span> <span>Create account</span></a></li><li id="pt-login" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Reactor+pattern" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o"><span class="vector-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Log in</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+	</div>
+</div>
+
+</nav>
+
+		</div>
+	</header>
+</div>
+<div class="mw-page-container">
+	<div class="mw-page-container-inner">
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"><!-- CentralNotice --></div>
+		</div>
+		<div class="vector-column-start">
+			<div class="vector-main-menu-container">
+		<div id="mw-navigation">
+			<nav id="mw-panel" class="vector-main-menu-landmark" aria-label="Site">
+				<div id="vector-main-menu-pinned-container" class="vector-pinned-container">
+				
+				</div>
+		</nav>
+		</div>
+	</div>
+	<div class="vector-sticky-pinned-container">
+				<nav id="mw-panel-toc" aria-label="Contents" data-event-name="ui.sidebar-toc" class="mw-table-of-contents-container vector-toc-landmark">
+					<div id="vector-toc-pinned-container" class="vector-pinned-container">
+					<div id="vector-toc" class="vector-toc vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-toc-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="toc-pinned"
+	data-pinnable-element-id="vector-toc"
+	
+	
+>
+	<h2 class="vector-pinnable-header-label">Contents</h2>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-toc.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-toc.unpin">hide</button>
+</div>
+
+
+	<ul class="vector-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text"
+			class="vector-toc-list-item vector-toc-level-1">
+			<a href="#" class="vector-toc-link">
+				<div class="vector-toc-text">(Top)</div>
+			</a>
+		</li>
+		<li id="toc-Overview"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Overview">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">1</span>
+				<span>Overview</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Overview-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-Usage"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Usage">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">2</span>
+				<span>Usage</span>
+			</div>
+		</a>
+		
+			<button aria-controls="toc-Usage-sublist" class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-toc-toggle">
+				<span class="vector-icon mw-ui-icon-wikimedia-expand"></span>
+				<span>Toggle Usage subsection</span>
+			</button>
+		
+		<ul id="toc-Usage-sublist" class="vector-toc-list">
+			<li id="toc-Applications"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Applications">
+				<div class="vector-toc-text">
+					<span class="vector-toc-numb">2.1</span>
+					<span>Applications</span>
+				</div>
+			</a>
+			
+			<ul id="toc-Applications-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li id="toc-Structure"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Structure">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">3</span>
+				<span>Structure</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Structure-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-Variants"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Variants">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">4</span>
+				<span>Variants</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Variants-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-See_also"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#See_also">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">5</span>
+				<span>See also</span>
+			</div>
+		</a>
+		
+		<ul id="toc-See_also-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-Notes"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Notes">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">6</span>
+				<span>Notes</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Notes-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-References"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#References">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">7</span>
+				<span>References</span>
+			</div>
+		</a>
+		
+		<ul id="toc-References-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-External_links"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#External_links">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">8</span>
+				<span>External links</span>
+			</div>
+		</a>
+		
+		<ul id="toc-External_links-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+</ul>
+</div>
+
+					</div>
+		</nav>
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body">
+				<header class="mw-body-header vector-page-titlebar no-font-mode-scale">
+					<nav aria-label="Contents" class="vector-toc-landmark">
+						
+<div id="vector-page-titlebar-toc" class="vector-dropdown vector-page-titlebar-toc vector-button-flush-left"  title="Table of Contents" >
+	<input type="checkbox" id="vector-page-titlebar-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-titlebar-toc" class="vector-dropdown-checkbox "  aria-label="Toggle the table of contents"  >
+	<label id="vector-page-titlebar-toc-label" for="vector-page-titlebar-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet"></span>
+
+<span class="vector-dropdown-label-text">Toggle the table of contents</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+							<div id="vector-page-titlebar-toc-unpinned-container" class="vector-unpinned-container">
+			</div>
+		
+	</div>
+</div>
+
+					</nav>
+					<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Reactor pattern</span></h1>
+							
+<div id="p-lang-btn" class="vector-dropdown mw-portlet mw-portlet-lang"  >
+	<input type="checkbox" id="p-lang-btn-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-lang-btn" class="vector-dropdown-checkbox mw-interlanguage-selector" aria-label="Go to an article in another language. Available in 9 languages"   >
+	<label id="p-lang-btn-label" for="p-lang-btn-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive mw-portlet-lang-heading-9" aria-hidden="true"  ><span class="vector-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive"></span>
+
+<span class="vector-dropdown-label-text">9 languages</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+		<div class="vector-menu-content">
+			
+			<ul class="vector-menu-content-list">
+				
+				<li class="interlanguage-link interwiki-de mw-list-item"><a href="https://de.wikipedia.org/wiki/Reactor_(Entwurfsmuster)" title="Reactor (Entwurfsmuster) – German" lang="de" hreflang="de" data-title="Reactor (Entwurfsmuster)" data-language-autonym="Deutsch" data-language-local-name="German" class="interlanguage-link-target"><span>Deutsch</span></a></li><li class="interlanguage-link interwiki-es mw-list-item"><a href="https://es.wikipedia.org/wiki/Reactor_(patr%C3%B3n_de_dise%C3%B1o)" title="Reactor (patrón de diseño) – Spanish" lang="es" hreflang="es" data-title="Reactor (patrón de diseño)" data-language-autonym="Español" data-language-local-name="Spanish" class="interlanguage-link-target"><span>Español</span></a></li><li class="interlanguage-link interwiki-fa mw-list-item"><a href="https://fa.wikipedia.org/wiki/%D8%A7%D9%84%DA%AF%D9%88%DB%8C_%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1(Reactor_pattern)" title="الگوی راکتور(Reactor pattern) – Persian" lang="fa" hreflang="fa" data-title="الگوی راکتور(Reactor pattern)" data-language-autonym="فارسی" data-language-local-name="Persian" class="interlanguage-link-target"><span>فارسی</span></a></li><li class="interlanguage-link interwiki-fr mw-list-item"><a href="https://fr.wikipedia.org/wiki/Reactor" title="Reactor – French" lang="fr" hreflang="fr" data-title="Reactor" data-language-autonym="Français" data-language-local-name="French" class="interlanguage-link-target"><span>Français</span></a></li><li class="interlanguage-link interwiki-ko mw-list-item"><a href="https://ko.wikipedia.org/wiki/%EB%B0%98%EC%9D%91%EC%9E%90_%ED%8C%A8%ED%84%B4" title="반응자 패턴 – Korean" lang="ko" hreflang="ko" data-title="반응자 패턴" data-language-autonym="한국어" data-language-local-name="Korean" class="interlanguage-link-target"><span>한국어</span></a></li><li class="interlanguage-link interwiki-it mw-list-item"><a href="https://it.wikipedia.org/wiki/Reactor_pattern" title="Reactor pattern – Italian" lang="it" hreflang="it" data-title="Reactor pattern" data-language-autonym="Italiano" data-language-local-name="Italian" class="interlanguage-link-target"><span>Italiano</span></a></li><li class="interlanguage-link interwiki-hu mw-list-item"><a href="https://hu.wikipedia.org/wiki/Reactor_programtervez%C3%A9si_minta" title="Reactor programtervezési minta – Hungarian" lang="hu" hreflang="hu" data-title="Reactor programtervezési minta" data-language-autonym="Magyar" data-language-local-name="Hungarian" class="interlanguage-link-target"><span>Magyar</span></a></li><li class="interlanguage-link interwiki-ru mw-list-item"><a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B0%D0%BA%D1%82%D0%BE%D1%80_(%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)" title="Реактор (шаблон проектирования) – Russian" lang="ru" hreflang="ru" data-title="Реактор (шаблон проектирования)" data-language-autonym="Русский" data-language-local-name="Russian" class="interlanguage-link-target"><span>Русский</span></a></li><li class="interlanguage-link interwiki-zh mw-list-item"><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%BA%94%E5%99%A8%E6%A8%A1%E5%BC%8F" title="反应器模式 – Chinese" lang="zh" hreflang="zh" data-title="反应器模式" data-language-autonym="中文" data-language-local-name="Chinese" class="interlanguage-link-target"><span>中文</span></a></li>
+			</ul>
+			<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q1122024#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>
+		</div>
+
+	</div>
+</div>
+</header>
+				<div class="vector-page-toolbar vector-feature-custom-font-size-clientpref--excluded">
+					<div class="vector-page-toolbar-container">
+						<div id="left-navigation">
+							<nav aria-label="Namespaces">
+								
+<div id="p-associated-pages" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-associated-pages"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected vector-tab-noicon mw-list-item"><a href="/wiki/Reactor_pattern" title="View the content page [c]" accesskey="c"><span>Article</span></a></li><li id="ca-talk" class="vector-tab-noicon mw-list-item"><a href="/wiki/Talk:Reactor_pattern" rel="discussion" title="Discuss improvements to the content page [t]" accesskey="t"><span>Talk</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+								
+<div id="vector-variants-dropdown" class="vector-dropdown emptyPortlet"  >
+	<input type="checkbox" id="vector-variants-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-variants-dropdown" class="vector-dropdown-checkbox " aria-label="Change language variant"   >
+	<label id="vector-variants-dropdown-label" for="vector-variants-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">English</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+					
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+						<div id="right-navigation" class="vector-collapsible">
+							<nav aria-label="Views">
+								
+<div id="p-views" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-views"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected vector-tab-noicon mw-list-item"><a href="/wiki/Reactor_pattern"><span>Read</span></a></li><li id="ca-edit" class="vector-tab-noicon mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;action=edit" title="Edit this page [e]" accesskey="e"><span>Edit</span></a></li><li id="ca-history" class="vector-tab-noicon mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+							</nav>
+				
+							<nav class="vector-page-tools-landmark" aria-label="Page tools">
+								
+<div id="vector-page-tools-dropdown" class="vector-dropdown vector-page-tools-dropdown"  >
+	<input type="checkbox" id="vector-page-tools-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-tools-dropdown" class="vector-dropdown-checkbox "  aria-label="Tools"  >
+	<label id="vector-page-tools-dropdown-label" for="vector-page-tools-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">Tools</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+									<div id="vector-page-tools-unpinned-container" class="vector-unpinned-container">
+						
+<div id="vector-page-tools" class="vector-page-tools vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-page-tools-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="page-tools-pinned"
+	data-pinnable-element-id="vector-page-tools"
+	data-pinned-container-id="vector-page-tools-pinned-container"
+	data-unpinned-container-id="vector-page-tools-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Tools</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-page-tools.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-page-tools.unpin">hide</button>
+</div>
+
+	
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-has-collapsible-items"  title="More options" >
+	<div class="vector-menu-heading">
+		Actions
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="/wiki/Reactor_pattern"><span>Read</span></a></li><li id="ca-more-edit" class="vector-more-collapsible-item mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;action=edit" title="Edit this page [e]" accesskey="e"><span>Edit</span></a></li><li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;action=history"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb"  >
+	<div class="vector-menu-heading">
+		General
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Reactor_pattern" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Reactor_pattern" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-upload" class="mw-list-item"><a href="//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u"><span>Upload file</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;oldid=1307945274" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Reactor_pattern&amp;id=1307945274&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=Special:UrlShortener&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FReactor_pattern"><span>Get shortened URL</span></a></li><li id="t-urlshortener-qrcode" class="mw-list-item"><a href="/w/index.php?title=Special:QrCode&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FReactor_pattern"><span>Download QR code</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-coll-print_export" class="vector-menu mw-portlet mw-portlet-coll-print_export"  >
+	<div class="vector-menu-heading">
+		Print/export
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="coll-download-as-rl" class="mw-list-item"><a href="/w/index.php?title=Special:DownloadAsPdf&amp;page=Reactor_pattern&amp;action=show-download-screen" title="Download this page as a PDF file"><span>Download as PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="/w/index.php?title=Reactor_pattern&amp;printable=yes" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-wikibase-otherprojects" class="vector-menu mw-portlet mw-portlet-wikibase-otherprojects"  >
+	<div class="vector-menu-heading">
+		In other projects
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-wikibase" class="wb-otherproject-link wb-otherproject-wikibase-dataitem mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q1122024" title="Structured data on this page hosted by Wikidata [g]" accesskey="g"><span>Wikidata item</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+									</div>
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="vector-column-end no-font-mode-scale">
+					<div class="vector-sticky-pinned-container">
+						<nav class="vector-page-tools-landmark" aria-label="Page tools">
+							<div id="vector-page-tools-pinned-container" class="vector-pinned-container">
+				
+							</div>
+		</nav>
+						<nav class="vector-appearance-landmark" aria-label="Appearance">
+							<div id="vector-appearance-pinned-container" class="vector-pinned-container">
+				<div id="vector-appearance" class="vector-appearance vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-appearance-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="appearance-pinned"
+	data-pinnable-element-id="vector-appearance"
+	data-pinned-container-id="vector-appearance-pinned-container"
+	data-unpinned-container-id="vector-appearance-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Appearance</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-appearance.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-appearance.unpin">hide</button>
+</div>
+
+
+</div>
+
+							</div>
+		</nav>
+					</div>
+				</div>
+				<div id="bodyContent" class="vector-body" aria-labelledby="firstHeading" data-mw-ve-target-container>
+					<div class="vector-body-before-content">
+							<div class="mw-indicators">
+		</div>
+
+						<div id="siteSub" class="noprint">From Wikipedia, the free encyclopedia</div>
+					</div>
+					<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Type of software design pattern</div>
+<p>The <b>reactor</b> <a href="/wiki/Software_design_pattern" title="Software design pattern">software design pattern</a> is an <a href="/wiki/Event_handling" class="mw-redirect" title="Event handling">event handling</a> strategy that can respond to many potential service requests <a href="/wiki/Concurrency_(computer_science)" title="Concurrency (computer science)">concurrently</a>. The pattern's key component is an <a href="/wiki/Event_loop" title="Event loop">event loop</a>, running in a <i>single</i> <a href="/wiki/Thread_(computing)" title="Thread (computing)">thread</a> or <a href="/wiki/Process_(computing)" title="Process (computing)">process</a>, which <a href="/wiki/Demultiplex" class="mw-redirect" title="Demultiplex">demultiplexes</a> incoming requests and dispatches them to the correct request handler.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-0" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>By relying on event-based mechanisms rather than <a href="/wiki/Blocking_I/O" class="mw-redirect" title="Blocking I/O">blocking I/O</a> or <a href="/wiki/Thread_(computing)" title="Thread (computing)">multi-threading</a>, a reactor can handle many concurrent <a href="/wiki/I/O_bound" title="I/O bound">I/O bound</a> requests with minimal delay.<sup id="cite&#95;ref-Devresse&#95;2014&#95;2-0" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>
+A reactor also allows for easily modifying or expanding specific request handler routines, though the pattern does have some drawbacks and limitations.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-1" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>With its balance of simplicity and <a href="/wiki/Scalability" title="Scalability">scalability</a>, the reactor has become a central architectural element in several <a href="/wiki/Server_(computing)" title="Server (computing)">server</a> applications and <a href="/wiki/Software_framework" title="Software framework">software frameworks</a> for <a href="/wiki/Computer_network" title="Computer network">networking</a>. Derivations such as the <b>multireactor</b> and <a href="/wiki/Proactor_pattern" title="Proactor pattern">proactor</a> also exist for special cases where even greater throughput, performance, or request complexity are necessary.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-2" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Devresse&#95;2014&#95;2-1" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Escoffier&#95;2021&#95;3-0" class="reference"><a href="#cite_note-Escoffier_2021-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Garrett&#95;2015&#95;4-0" class="reference"><a href="#cite_note-Garrett_2015-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>
+</p>
+<meta property="mw:PageProp/toc" />
+<div class="mw-heading mw-heading2"><h2 id="Overview">Overview</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=1" title="Edit section: Overview"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Practical considerations for the <a href="/wiki/Client%E2%80%93server_model" title="Client–server model">client–server model</a> in large networks, such as the <a href="/wiki/C10k_problem" title="C10k problem">C10k problem</a> for <a href="/wiki/Web_server" title="Web server">web servers</a>, were the original motivation for the reactor pattern.<sup id="cite&#95;ref-Kegel&#95;2014&#95;5-0" class="reference"><a href="#cite_note-Kegel_2014-5"><span class="cite-bracket">&#91;</span>5<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>A naive approach to handle service requests from many potential endpoints, such as <a href="/wiki/Network_socket" title="Network socket">network sockets</a> or <a href="/wiki/File_descriptor" title="File descriptor">file descriptors</a>, is to listen for new requests from within an event loop, then immediately <a href="/wiki/Read_(system_call)" title="Read (system call)">read</a> the earliest request. Once the entire request has been read, it can be processed and forwarded on by directly calling the appropriate handler. An entirely "iterative" server like this, which handles one request from start-to-finish per iteration of the event loop, is logically valid. However, it will fall behind once it receives multiple requests in quick succession. The iterative approach cannot scale because reading the request <a href="/wiki/Blocking_(computing)" title="Blocking (computing)">blocks</a> the server's only thread until the full request is received, and I/O operations are typically much slower than other computations.<sup id="cite&#95;ref-Devresse&#95;2014&#95;2-2" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>One strategy to overcome this limitation is multi-threading: by immediately splitting off each new request into its own worker thread, the first request will no longer block the event loop, which can immediately iterate and handle another request. This "thread per connection" design scales better than a purely iterative one, but it still contains multiple inefficiencies and will struggle past a point. From a standpoint of underlying <a href="/wiki/System_resource" title="System resource">system resources</a>, each new thread or process imposes <a href="/wiki/Overhead_(computing)" title="Overhead (computing)">overhead</a> costs in <a href="/wiki/Computer_memory" title="Computer memory">memory</a> and processing time (due to <a href="/wiki/Context_switch" title="Context switch">context switching</a>). The fundamental inefficiency of each thread waiting for I/O to finish isn't resolved either.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-3" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Devresse&#95;2014&#95;2-3" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>From a design standpoint, both approaches <a href="/wiki/Tight_coupling" class="mw-redirect" title="Tight coupling">tightly couple</a> the general demultiplexer with specific request handlers too, making the server code brittle and tedious to modify. These considerations suggest a few major design decisions:
+</p>
+<ol><li>Retain a single-threaded event handler; multi-threading introduces overhead and complexity without resolving the real issue of blocking I/O</li>
+<li>Use an event notification mechanism to demultiplex requests only <i>after</i> I/O is complete (so I/O is effectively non-blocking)</li>
+<li>Register request handlers as <a href="/wiki/Callback_(computer_programming)" title="Callback (computer programming)">callbacks</a> with the event handler for better <a href="/wiki/Separation_of_concern" class="mw-redirect" title="Separation of concern">separation of concerns</a></li></ol>
+<p>Combining these insights leads to the reactor pattern, which balances the advantages of single-threading with high throughput and scalability.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-4" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Devresse&#95;2014&#95;2-4" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup> 
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Usage">Usage</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=2" title="Edit section: Usage"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The reactor pattern can be a good starting point for any concurrent, event-handling problem. The pattern is not restricted to network sockets either; hardware I/O, <a href="/wiki/File_system" title="File system">file system</a> or <a href="/wiki/Database" title="Database">database</a> access, <a href="/wiki/Inter-process_communication" title="Inter-process communication">inter-process communication</a>, and even abstract <a href="/wiki/Message_passing" title="Message passing">message passing</a> systems are all possible use-cases.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="Seems straight-forward, but most sources emphasize network applications. (September 2023)">citation needed</span></a></i>&#93;</sup>
+</p><p>However, the reactor pattern does have limitations, a major one being the use of callbacks, which make <a href="/wiki/Program_analysis" title="Program analysis">program analysis</a> and <a href="/wiki/Debugging" title="Debugging">debugging</a> more difficult, a problem common to designs with <a href="/wiki/Inversion_of_control" title="Inversion of control">inverted control</a>.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-5" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup> The simpler thread-per-connection and fully iterative approaches avoid this and can be valid solutions if scalability or high-throughput are not required.<sup id="cite&#95;ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">&#91;</span>a<span class="cite-bracket">&#93;</span></a></sup><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="Basic design logic, but should have a source. (September 2023)">citation needed</span></a></i>&#93;</sup>
+</p><p>Single-threading can also become a drawback in use-cases that require maximum throughput, or when requests involve significant processing. Different multi-threaded designs can overcome these limitations, and in fact, some still use the reactor pattern as a sub-component for handling events and I/O.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-6" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Applications">Applications</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=3" title="Edit section: Applications"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The reactor pattern (or a variant of it) has found a place in many web servers, <a href="/wiki/Application_server" title="Application server">application servers</a>, and networking frameworks:
+</p>
+<ul><li><a href="/wiki/Adaptive_Communication_Environment" title="Adaptive Communication Environment">Adaptive Communication Environment</a> (ACE)<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-7" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/EventMachine" title="EventMachine">EventMachine</a><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (September 2023)">citation needed</span></a></i>&#93;</sup></li>
+<li><a href="/wiki/Netty_(software)" title="Netty (software)">Netty</a><sup id="cite&#95;ref-Escoffier&#95;2021&#95;3-1" class="reference"><a href="#cite_note-Escoffier_2021-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/Nginx" title="Nginx">Nginx</a><sup id="cite&#95;ref-Garrett&#95;2015&#95;4-1" class="reference"><a href="#cite_note-Garrett_2015-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/Node.js" title="Node.js">Node.js</a><sup id="cite&#95;ref-Devresse&#95;2014&#95;2-5" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Bonér&#95;2022&#95;7-0" class="reference"><a href="#cite_note-Bonér_2022-7"><span class="cite-bracket">&#91;</span>6<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/Perl_Object_Environment" title="Perl Object Environment">Perl Object Environment</a><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (September 2023)">citation needed</span></a></i>&#93;</sup></li>
+<li><a href="/wiki/POCO_C%2B%2B_Libraries" title="POCO C++ Libraries">POCO C++ Libraries</a><sup id="cite&#95;ref-POCO&#95;Network&#95;Programming&#95;8-0" class="reference"><a href="#cite_note-POCO_Network_Programming-8"><span class="cite-bracket">&#91;</span>7<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/Spring_Framework" title="Spring Framework">Spring Framework</a> (version 5 and later)<sup id="cite&#95;ref-Stoyanchev&#95;2016&#95;9-0" class="reference"><a href="#cite_note-Stoyanchev_2016-9"><span class="cite-bracket">&#91;</span>8<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/Tokio_(software)" title="Tokio (software)">Tokio</a><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (February 2025)">citation needed</span></a></i>&#93;</sup></li>
+<li><a href="/wiki/Twisted_(software)" title="Twisted (software)">Twisted</a><sup id="cite&#95;ref-Twisted&#95;2024&#95;10-0" class="reference"><a href="#cite_note-Twisted_2024-10"><span class="cite-bracket">&#91;</span>9<span class="cite-bracket">&#93;</span></a></sup></li>
+<li><a href="/wiki/Vert.x" title="Vert.x">Vert.x</a><sup id="cite&#95;ref-Escoffier&#95;2021&#95;3-2" class="reference"><a href="#cite_note-Escoffier_2021-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Structure">Structure</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=4" title="Edit section: Structure"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul class="gallery mw-gallery-traditional">
+		<li class="gallerybox" style="width: 155px">
+			<div class="thumb" style="width: 150px; height: 150px;"><span typeof="mw:File"><a href="/wiki/File:Reactor_Pattern_-_UML_2_Component_Diagram.svg" class="mw-file-description" title="UML 2 component diagram of a reactive application.[1]"><img alt="A reactor typically consists of 2 subsystems. Sockets (a.k.a. handles) and a demultiplexer (like select or epoll) are typically provided by the system. The reactive application will provide a dispatcher / event-loop that reacts to handle events by invoking handlers, which are registered as callbacks." src="//upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Reactor_Pattern_-_UML_2_Component_Diagram.svg/120px-Reactor_Pattern_-_UML_2_Component_Diagram.svg.png" decoding="async" width="120" height="88" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Reactor_Pattern_-_UML_2_Component_Diagram.svg/250px-Reactor_Pattern_-_UML_2_Component_Diagram.svg.png 1.5x" data-file-width="654" data-file-height="482" /></a></span></div>
+			<div class="gallerytext">UML 2 component diagram of a reactive application.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-8" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup></div>
+		</li>
+		<li class="gallerybox" style="width: 155px">
+			<div class="thumb" style="width: 150px; height: 150px;"><span typeof="mw:File"><a href="/wiki/File:ReactorPattern_-_UML_2_Sequence_Diagram.svg" class="mw-file-description" title="UML 2 sequence diagram of a reactive server.[1]"><img alt="Before starting the event loop, a reactive application will typically register handles &amp; handlers for specific requests. The event loop will then respond to request-based events by invoking a handler, passing the handle for processing." src="//upload.wikimedia.org/wikipedia/commons/thumb/8/87/ReactorPattern_-_UML_2_Sequence_Diagram.svg/120px-ReactorPattern_-_UML_2_Sequence_Diagram.svg.png" decoding="async" width="120" height="91" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/87/ReactorPattern_-_UML_2_Sequence_Diagram.svg/250px-ReactorPattern_-_UML_2_Sequence_Diagram.svg.png 1.5x" data-file-width="771" data-file-height="586" /></a></span></div>
+			<div class="gallerytext">UML 2 sequence diagram of a reactive server.<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-9" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup></div>
+		</li>
+</ul>
+<p>A reactive application consists of several moving parts and will rely on some support mechanisms:<sup id="cite&#95;ref-Schmidt&#95;1995&#95;1-10" class="reference"><a href="#cite_note-Schmidt_1995-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup>
+<style data-mw-deduplicate="TemplateStyles:r1228772891">.mw-parser-output .glossary dt{margin-top:0.4em}.mw-parser-output .glossary dt+dt{margin-top:-0.2em}.mw-parser-output .glossary .templatequote{margin-top:0;margin-bottom:-0.5em}</style>
+</p>
+<dl class="glossary">
+<dt id="handle"><dfn>Handle</dfn></dt>
+<dd>An identifier and interface to a specific request, with IO and data. This will often take the form of a socket, file descriptor, or similar mechanism, which should be provided by most modern operating systems.</dd>
+<dt id="demultiplexer"><dfn>Demultiplexer</dfn></dt>
+<dd>An event notifier that can efficiently monitor the <i>status</i> of a handle, then notify other subsystems of a relevant status change (typically an IO handle becoming "ready to read"). Traditionally this role was filled by the <a href="/wiki/Select_(Unix)" title="Select (Unix)">select() system call</a>, but more contemporary examples include <a href="/wiki/Epoll" title="Epoll">epoll</a>, <a href="/wiki/Kqueue" title="Kqueue">kqueue</a>, and <a href="/wiki/IOCP" class="mw-redirect" title="IOCP">IOCP</a>.</dd>
+<dt id="dispatcher"><dfn>Dispatcher</dfn></dt>
+<dd>The actual event loop of the reactive application, this component maintains the registry of valid event handlers, then invokes the appropriate handler when an event is raised.</dd>
+<dt id="event&#95;handler"><dfn>Event Handler</dfn></dt>
+<dd>Also known as a request handler, this is the specific logic for processing one type of service request. The reactor pattern suggests registering these dynamically with the dispatcher as callbacks for greater flexibility. By default, a reactor does <i>not</i> use multi-threading but invokes a request handler within the same thread as the dispatcher.</dd>
+<dt id="event&#95;handler&#95;interface"><dfn>Event Handler Interface</dfn></dt>
+<dd>An abstract interface class, representing the general properties and methods of an event handler. Each specific handler must implement this interface while the dispatcher will operate on the event handlers through this interface.</dd>
+</dl>
+<div class="mw-heading mw-heading2"><h2 id="Variants">Variants</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=5" title="Edit section: Variants"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The standard reactor pattern is sufficient for many applications, but for particularly demanding ones, tweaks can provide even more power at the price of extra complexity.
+</p><p>One basic modification is to invoke event handlers in their own threads for more concurrency. Running the handlers in a <a href="/wiki/Thread_pool" title="Thread pool">thread pool</a>, rather than spinning up new threads as needed, will further simplify the multi-threading and minimize overhead. This makes the thread pool a natural complement to the reactor pattern in many use-cases.<sup id="cite&#95;ref-Devresse&#95;2014&#95;2-6" class="reference"><a href="#cite_note-Devresse_2014-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>Another way to maximize throughput is to partly reintroduce the approach of the "thread per connection" server, with replicated dispatchers / event loops running concurrently. However, rather than the number of connections, one configures the dispatcher count to match the available <a href="/wiki/CPU_core" class="mw-redirect" title="CPU core">CPU cores</a> of the underlying hardware.
+</p><p>Known as a multireactor, this variant ensures a dedicated server is fully using the hardware's processing power. Because the distinct threads are long-running event loops, the overhead of creating and destroying threads is limited to server startup and shutdown. With requests distributed across independent dispatchers, a multireactor also provides better availability and robustness; should an error occur and a single dispatcher fail, it will only interrupt requests allocated to that event loop.<sup id="cite&#95;ref-Escoffier&#95;2021&#95;3-3" class="reference"><a href="#cite_note-Escoffier_2021-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup><sup id="cite&#95;ref-Garrett&#95;2015&#95;4-2" class="reference"><a href="#cite_note-Garrett_2015-4"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup>
+</p><p>For particularly complex services, where synchronous and asynchronous demands must be combined, one other alternative is the proactor pattern. This pattern is more intricate than a reactor, with its own engineering details, but it still makes use of a reactor subcomponent to solve the problem of blocking IO.<sup id="cite&#95;ref-Escoffier&#95;2021&#95;3-4" class="reference"><a href="#cite_note-Escoffier_2021-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=6" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/C10k_problem" title="C10k problem">C10k problem</a></li>
+<li><a href="/wiki/Event-driven_programming" title="Event-driven programming">Event-driven programming</a></li>
+<li><a href="/wiki/Input/output" title="Input/output">Input/output</a></li>
+<li><a href="/wiki/Libevent" title="Libevent">libevent</a></li>
+<li><a href="/wiki/Reactive_programming" title="Reactive programming">Reactive programming</a></li></ul>
+<p><b>Related patterns:</b>
+</p>
+<ul><li><a href="/wiki/Active_object" title="Active object">Active object</a></li>
+<li><a href="/wiki/Observer_pattern" title="Observer pattern">Observer pattern</a></li>
+<li><a href="/wiki/Proactor_pattern" title="Proactor pattern">Proactor pattern</a>, which allows mixing synchronous &amp; asynchronous event handling</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=7" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist reflist-lower-alpha">
+<div class="mw-references-wrap"><ol class="references" data-mw-group="lower-alpha">
+<li id="cite&#95;note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text">That said, a rule-of-thumb in software design is that if application demands can potentially increase past an assumed limit, one should expect that someday they will.</span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=8" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1239543626" /><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite&#95;note-Schmidt&#95;1995-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-Schmidt_1995_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-4"><sup><i><b>e</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-5"><sup><i><b>f</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-6"><sup><i><b>g</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-7"><sup><i><b>h</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-8"><sup><i><b>i</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-9"><sup><i><b>j</b></i></sup></a> <a href="#cite_ref-Schmidt_1995_1-10"><sup><i><b>k</b></i></sup></a></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite id="CITEREFSchmidt1995" class="citation book cs1"><a href="/wiki/Douglas_C._Schmidt" title="Douglas C. Schmidt">Schmidt, Douglas C.</a> (1995). <a rel="nofollow" class="external text" href="https://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf">"Chapter 29: Reactor: An Object Behavioral Pattern for Demultiplexing and Dispatching Handles for Synchronous Events"</a> <span class="cs1-format">(PDF)</span>. In <a href="/wiki/Jim_Coplien" title="Jim Coplien">Coplien, James O.</a> (ed.). <i>Pattern Languages of Program Design</i>. Vol.&#160;1 (1st&#160;ed.). Addison-Wesley. <a href="/wiki/ISBN_(identifier)" class="mw-redirect" title="ISBN (identifier)">ISBN</a>&#160;<a href="/wiki/Special:BookSources/9780201607345" title="Special:BookSources/9780201607345"><bdi>9780201607345</bdi></a>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Chapter+29%3A+Reactor%3A+An+Object+Behavioral+Pattern+for+Demultiplexing+and+Dispatching+Handles+for+Synchronous+Events&amp;rft.btitle=Pattern+Languages+of+Program+Design&amp;rft.edition=1st&amp;rft.pub=Addison-Wesley&amp;rft.date=1995&amp;rft.isbn=9780201607345&amp;rft.aulast=Schmidt&amp;rft.aufirst=Douglas+C.&amp;rft&#95;id=https%3A%2F%2Fwww.dre.vanderbilt.edu%2F~schmidt%2FPDF%2Freactor-siemens.pdf&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Devresse&#95;2014-2"><span class="mw-cite-backlink">^ <a href="#cite_ref-Devresse_2014_2-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Devresse_2014_2-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Devresse_2014_2-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-Devresse_2014_2-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-Devresse_2014_2-4"><sup><i><b>e</b></i></sup></a> <a href="#cite_ref-Devresse_2014_2-5"><sup><i><b>f</b></i></sup></a> <a href="#cite_ref-Devresse_2014_2-6"><sup><i><b>g</b></i></sup></a></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFDevresse2014" class="citation web cs1">Devresse, Adrien (20 June 2014). <a rel="nofollow" class="external text" href="https://indico.cern.ch/event/282910/contributions/645355/attachments/521441/719267/efficient_parallel_IO_on_multicore_arch2.pdf">"Efficient parallel I/O on multi-core architectures"</a> <span class="cs1-format">(PDF)</span>. <i>2nd Thematic CERN School of Computing</i>. CERN. <a rel="nofollow" class="external text" href="https://web.archive.org/web/20220808062914/https://indico.cern.ch/event/282910/contributions/645355/attachments/521441/719267/efficient_parallel_IO_on_multicore_arch2.pdf">Archived</a> <span class="cs1-format">(PDF)</span> from the original on 8 August 2022<span class="reference-accessdate">. Retrieved <span class="nowrap">14 September</span> 2023</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=2nd+Thematic+CERN+School+of+Computing&amp;rft.atitle=Efficient+parallel+I%2FO+on+multi-core+architectures&amp;rft.date=2014-06-20&amp;rft.aulast=Devresse&amp;rft.aufirst=Adrien&amp;rft&#95;id=https%3A%2F%2Findico.cern.ch%2Fevent%2F282910%2Fcontributions%2F645355%2Fattachments%2F521441%2F719267%2Fefficient&#95;parallel&#95;IO&#95;on&#95;multicore&#95;arch2.pdf&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Escoffier&#95;2021-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-Escoffier_2021_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Escoffier_2021_3-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Escoffier_2021_3-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-Escoffier_2021_3-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-Escoffier_2021_3-4"><sup><i><b>e</b></i></sup></a></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFEscoffierFinnegan2021" class="citation book cs1">Escoffier, Clement; Finnegan, Ken (November 2021). <span class="id-lock-registration" title="Free registration required"><a rel="nofollow" class="external text" href="https://www.oreilly.com/library/view/reactive-systems-in/9781492091714/ch04.html">"Chapter 4. Design Principles of Reactive Systems"</a></span>. <i>Reactive Systems in Java</i>. O'Reilly Media. <a href="/wiki/ISBN_(identifier)" class="mw-redirect" title="ISBN (identifier)">ISBN</a>&#160;<a href="/wiki/Special:BookSources/9781492091721" title="Special:BookSources/9781492091721"><bdi>9781492091721</bdi></a>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Chapter+4.+Design+Principles+of+Reactive+Systems&amp;rft.btitle=Reactive+Systems+in+Java&amp;rft.pub=O%27Reilly+Media&amp;rft.date=2021-11&amp;rft.isbn=9781492091721&amp;rft.aulast=Escoffier&amp;rft.aufirst=Clement&amp;rft.au=Finnegan%2C+Ken&amp;rft&#95;id=https%3A%2F%2Fwww.oreilly.com%2Flibrary%2Fview%2Freactive-systems-in%2F9781492091714%2Fch04.html&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Garrett&#95;2015-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-Garrett_2015_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Garrett_2015_4-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Garrett_2015_4-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFGarrett2015" class="citation web cs1">Garrett, Owen (10 June 2015). <a rel="nofollow" class="external text" href="https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/">"Inside NGINX: How We Designed for Performance &amp; Scale"</a>. <i>NGINX</i>. F5, Inc. <a rel="nofollow" class="external text" href="https://web.archive.org/web/20230820232851/https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/">Archived</a> from the original on 20 August 2023<span class="reference-accessdate">. Retrieved <span class="nowrap">10 September</span> 2023</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=NGINX&amp;rft.atitle=Inside+NGINX%3A+How+We+Designed+for+Performance+%26+Scale&amp;rft.date=2015-06-10&amp;rft.aulast=Garrett&amp;rft.aufirst=Owen&amp;rft&#95;id=https%3A%2F%2Fwww.nginx.com%2Fblog%2Finside-nginx-how-we-designed-for-performance-scale%2F&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Kegel&#95;2014-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-Kegel_2014_5-0">^</a></b></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFKegel2014" class="citation web cs1">Kegel, Dan (5 February 2014). <a rel="nofollow" class="external text" href="http://www.kegel.com/c10k.html">"The C10k problem"</a>. <i>Dan Kegel's Web Hostel</i>. <a rel="nofollow" class="external text" href="https://web.archive.org/web/20230906022635/http://www.kegel.com/c10k.html">Archived</a> from the original on 6 September 2023<span class="reference-accessdate">. Retrieved <span class="nowrap">10 September</span> 2023</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Dan+Kegel%27s+Web+Hostel&amp;rft.atitle=The+C10k+problem&amp;rft.date=2014-02-05&amp;rft.aulast=Kegel&amp;rft.aufirst=Dan&amp;rft&#95;id=http%3A%2F%2Fwww.kegel.com%2Fc10k.html&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Bonér&#95;2022-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-Bonér_2022_7-0">^</a></b></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFBonér2022" class="citation web cs1">Bonér, Jonas (15 June 2022). <a rel="nofollow" class="external text" href="https://www.reactiveprinciples.org/patterns/isolate-mutations.html">"The Reactive Patterns: 3. Isolate Mutations"</a>. <i>The Reactive Principles</i><span class="reference-accessdate">. Retrieved <span class="nowrap">20 September</span> 2023</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=The+Reactive+Principles&amp;rft.atitle=The+Reactive+Patterns%3A+3.+Isolate+Mutations&amp;rft.date=2022-06-15&amp;rft.aulast=Bon%C3%A9r&amp;rft.aufirst=Jonas&amp;rft&#95;id=https%3A%2F%2Fwww.reactiveprinciples.org%2Fpatterns%2Fisolate-mutations.html&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-POCO&#95;Network&#95;Programming-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-POCO_Network_Programming_8-0">^</a></b></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite class="citation web cs1"><a rel="nofollow" class="external text" href="https://pocoproject.org/slides/200-Network.pdf">"Network Programming: Writing network and internet applications"</a> <span class="cs1-format">(PDF)</span>. <i>POCO Project</i>. Applied Informatics Software Engineering GmbH. 2010. pp.&#160;<span class="nowrap">21–</span>22<span class="reference-accessdate">. Retrieved <span class="nowrap">20 September</span> 2023</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=POCO+Project&amp;rft.atitle=Network+Programming%3A+Writing+network+and+internet+applications&amp;rft.pages=21-22&amp;rft.date=2010&amp;rft&#95;id=https%3A%2F%2Fpocoproject.org%2Fslides%2F200-Network.pdf&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Stoyanchev&#95;2016-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-Stoyanchev_2016_9-0">^</a></b></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFStoyanchev2016" class="citation web cs1">Stoyanchev, Rossen (9 February 2016). <a rel="nofollow" class="external text" href="https://spring.io/blog/2016/02/09/reactive-spring">"Reactive Spring"</a>. <i>Spring.io</i><span class="reference-accessdate">. Retrieved <span class="nowrap">20 September</span> 2023</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Spring.io&amp;rft.atitle=Reactive+Spring&amp;rft.date=2016-02-09&amp;rft.aulast=Stoyanchev&amp;rft.aufirst=Rossen&amp;rft&#95;id=https%3A%2F%2Fspring.io%2Fblog%2F2016%2F02%2F09%2Freactive-spring&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+<li id="cite&#95;note-Twisted&#95;2024-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-Twisted_2024_10-0">^</a></b></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite class="citation web cs1"><a rel="nofollow" class="external text" href="https://docs.twisted.org/en/stable/core/howto/reactor-basics.html">"Reactor Overview"</a>. <i>twisted.org</i><span class="reference-accessdate">. Retrieved <span class="nowrap">28 July</span> 2024</span>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=twisted.org&amp;rft.atitle=Reactor+Overview&amp;rft&#95;id=https%3A%2F%2Fdocs.twisted.org%2Fen%2Fstable%2Fcore%2Fhowto%2Freactor-basics.html&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Reactor_pattern&amp;action=edit&amp;section=9" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>Specific applications:</b>
+</p>
+<ul><li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite id="CITEREFAlexeev2012" class="citation book cs1">Alexeev, Andrew (30 March 2012). <a rel="nofollow" class="external text" href="https://aosabook.org/en/v2/nginx.html">"Chapter 14: nginx"</a>. In Brown, Amy; Wilson, Greg (eds.). <i>The Architecture of Open Source Applications</i>. Vol.&#160;2. Lulu.com. <a href="/wiki/ISBN_(identifier)" class="mw-redirect" title="ISBN (identifier)">ISBN</a>&#160;<a href="/wiki/Special:BookSources/9781105571817" title="Special:BookSources/9781105571817"><bdi>9781105571817</bdi></a>.</cite><span title="ctx&#95;ver=Z39.88-2004&amp;rft&#95;val&#95;fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Chapter+14%3A+nginx&amp;rft.btitle=The+Architecture+of+Open+Source+Applications&amp;rft.pub=Lulu.com&amp;rft.date=2012-03-30&amp;rft.isbn=9781105571817&amp;rft.aulast=Alexeev&amp;rft.aufirst=Andrew&amp;rft&#95;id=https%3A%2F%2Faosabook.org%2Fen%2Fv2%2Fnginx.html&amp;rfr&#95;id=info%3Asid%2Fen.wikipedia.org%3AReactor+pattern" class="Z3988"></span></li></ul>
+<p><b>Sample implementations:</b>
+</p>
+<ul><li><a rel="nofollow" class="external text" href="http://www.ddj.com/cpp/193101548">APR Networking &amp; the Reactor Pattern</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20100726184112/http://today.java.net/article/2007/02/08/architecture-highly-scalable-nio-based-server">Architecture of a Highly Scalable NIO-Based Server</a></li></ul>
+<div class="navbox-styles"><style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1314944253">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd;color:inherit}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf;color:inherit}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf;color:inherit}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff;color:inherit}.mw-parser-output .navbox-even{background-color:#f7f7f7;color:inherit}.mw-parser-output .navbox-odd{background-color:transparent;color:inherit}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style></div><div role="navigation" class="navbox" aria-labelledby="Software&#95;design&#95;patterns4199" style="padding:3px"><table class="nowraplinks mw-collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th scope="col" class="navbox-title" colspan="2"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1129693374" /><style data-mw-deduplicate="TemplateStyles:r1239400231">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Design_patterns" title="Template:Design patterns"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Design_patterns" title="Template talk:Design patterns"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Design_patterns" title="Special:EditPage/Template:Design patterns"><abbr title="Edit this template">e</abbr></a></li></ul></div><div id="Software&#95;design&#95;patterns4199" style="font-size:114%;margin:0 4em"><a href="/wiki/Software_design_pattern" title="Software design pattern">Software design patterns</a></div></th></tr><tr><th scope="row" class="navbox-group" style="width:1%"><a href="/wiki/Design_Patterns" title="Design Patterns">Gang of Four<br />patterns</a></th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em"></div><table class="nowraplinks navbox-subgroup" style="border-spacing:0"><tbody><tr><th scope="row" class="navbox-group" style="width:1%"><a href="/wiki/Creational_pattern" title="Creational pattern">Creational</a></th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Abstract_factory_pattern" title="Abstract factory pattern">Abstract factory</a></li>
+<li><a href="/wiki/Builder_pattern" title="Builder pattern">Builder</a></li>
+<li><a href="/wiki/Factory_method_pattern" title="Factory method pattern">Factory method</a></li>
+<li><a href="/wiki/Prototype_pattern" title="Prototype pattern">Prototype</a></li>
+<li><a href="/wiki/Singleton_pattern" title="Singleton pattern">Singleton</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%"><a href="/wiki/Structural_pattern" title="Structural pattern">Structural</a></th><td class="navbox-list-with-group navbox-list navbox-even" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Adapter_pattern" title="Adapter pattern">Adapter</a></li>
+<li><a href="/wiki/Bridge_pattern" title="Bridge pattern">Bridge</a></li>
+<li><a href="/wiki/Composite_pattern" title="Composite pattern">Composite</a></li>
+<li><a href="/wiki/Decorator_pattern" title="Decorator pattern">Decorator</a></li>
+<li><a href="/wiki/Facade_pattern" title="Facade pattern">Facade</a></li>
+<li><a href="/wiki/Flyweight_pattern" title="Flyweight pattern">Flyweight</a></li>
+<li><a href="/wiki/Proxy_pattern" title="Proxy pattern">Proxy</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%"><a href="/wiki/Behavioral_pattern" title="Behavioral pattern">Behavioral</a></th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Chain-of-responsibility_pattern" title="Chain-of-responsibility pattern">Chain of responsibility</a></li>
+<li><a href="/wiki/Command_pattern" title="Command pattern">Command</a></li>
+<li><a href="/wiki/Interpreter_pattern" title="Interpreter pattern">Interpreter</a></li>
+<li><a href="/wiki/Iterator_pattern" title="Iterator pattern">Iterator</a></li>
+<li><a href="/wiki/Mediator_pattern" title="Mediator pattern">Mediator</a></li>
+<li><a href="/wiki/Memento_pattern" title="Memento pattern">Memento</a></li>
+<li><a href="/wiki/Observer_pattern" title="Observer pattern">Observer</a></li>
+<li><a href="/wiki/State_pattern" title="State pattern">State</a></li>
+<li><a href="/wiki/Strategy_pattern" title="Strategy pattern">Strategy</a></li>
+<li><a href="/wiki/Template_method_pattern" title="Template method pattern">Template method</a></li>
+<li><a href="/wiki/Visitor_pattern" title="Visitor pattern">Visitor</a></li></ul>
+</div></td></tr></tbody></table><div></div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%"><a href="/wiki/Concurrency_pattern" title="Concurrency pattern">Concurrency<br />patterns</a></th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Active_object" title="Active object">Active object</a></li>
+<li><a href="/wiki/Balking_pattern" title="Balking pattern">Balking</a></li>
+<li><a href="/wiki/Binding_properties_pattern" title="Binding properties pattern">Binding properties</a></li>
+<li><a href="/wiki/Double-checked_locking" title="Double-checked locking">Double-checked locking</a></li>
+<li><a href="/wiki/Asynchronous_method_invocation" title="Asynchronous method invocation">Event-based asynchronous</a></li>
+<li><a href="/wiki/Guarded_suspension" title="Guarded suspension">Guarded suspension</a></li>
+<li><a href="/wiki/Join-pattern" title="Join-pattern">Join</a></li>
+<li><a href="/wiki/Lock_(computer_science)" title="Lock (computer science)">Lock</a></li>
+<li><a href="/wiki/Monitor_(synchronization)" title="Monitor (synchronization)">Monitor</a></li>
+<li><a href="/wiki/Proactor_pattern" title="Proactor pattern">Proactor</a></li>
+<li><a class="mw-selflink selflink">Reactor</a></li>
+<li><a href="/wiki/Readers%E2%80%93writer_lock" title="Readers–writer lock">Read–write lock</a></li>
+<li><a href="/wiki/Scheduler_pattern" class="mw-redirect" title="Scheduler pattern">Scheduler</a></li>
+<li><a href="/wiki/Scheduled-task_pattern" title="Scheduled-task pattern">Scheduled-task pattern</a></li>
+<li><a href="/wiki/Semaphore_(programming)" title="Semaphore (programming)">Semaphore</a></li>
+<li><a href="/wiki/Thread_pool" title="Thread pool">Thread pool</a></li>
+<li><a href="/wiki/Thread-local_storage" title="Thread-local storage">Thread-local storage</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%"><a href="/wiki/Architectural_pattern" title="Architectural pattern">Architectural<br />patterns</a></th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Front_controller" title="Front controller">Front controller</a></li>
+<li><a href="/wiki/Interceptor_pattern" title="Interceptor pattern">Interceptor</a></li>
+<li><a href="/wiki/Model%E2%80%93view%E2%80%93controller" title="Model–view–controller">MVC</a>
+<ul><li><a href="/wiki/Model%E2%80%93view%E2%80%93presenter" title="Model–view–presenter">MVP</a></li>
+<li><a href="/wiki/Model%E2%80%93view%E2%80%93viewmodel" title="Model–view–viewmodel">MVVM</a></li></ul></li>
+<li><a href="/wiki/Action%E2%80%93domain%E2%80%93responder" title="Action–domain–responder">ADR</a></li>
+<li><a href="/wiki/Entity_component_system" title="Entity component system">ECS</a></li>
+<li><a href="/wiki/Multitier_architecture" title="Multitier architecture"><i>n</i>-tier</a></li>
+<li><a href="/wiki/Specification_pattern" title="Specification pattern">Specification</a></li>
+<li><a href="/wiki/Publish%E2%80%93subscribe_pattern" title="Publish–subscribe pattern">Publish–subscribe</a></li>
+<li><a href="/wiki/Naked_objects" title="Naked objects">Naked objects</a></li>
+<li><a href="/wiki/Service_locator_pattern" title="Service locator pattern">Service locator</a></li>
+<li><a href="/wiki/Active_record_pattern" title="Active record pattern">Active record</a></li>
+<li><a href="/wiki/Identity_map_pattern" title="Identity map pattern">Identity map</a></li>
+<li><a href="/wiki/Data_access_object" title="Data access object">Data access object</a></li>
+<li><a href="/wiki/Data_transfer_object" title="Data transfer object">Data transfer object</a></li>
+<li><a href="/wiki/Inversion_of_control" title="Inversion of control">Inversion of control</a></li>
+<li><a href="/wiki/JSP_model_2_architecture" title="JSP model 2 architecture">Model 2</a></li>
+<li><a href="/wiki/Broker_pattern" title="Broker pattern">Broker</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">Other<br />patterns</th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Blackboard_design_pattern" class="mw-redirect" title="Blackboard design pattern">Blackboard</a></li>
+<li><a href="/wiki/Business_delegate_pattern" title="Business delegate pattern">Business delegate</a></li>
+<li><a href="/wiki/Composite_entity_pattern" title="Composite entity pattern">Composite entity</a></li>
+<li><a href="/wiki/Composition_over_inheritance" title="Composition over inheritance">Composition over inheritance</a></li>
+<li><a href="/wiki/Dependency_injection" title="Dependency injection">Dependency injection</a></li>
+<li><a href="/wiki/Guard_(computer_science)" title="Guard (computer science)">Guard clause</a></li>
+<li><a href="/wiki/Intercepting_filter_pattern" title="Intercepting filter pattern">Intercepting filter</a></li>
+<li><a href="/wiki/Lazy_loading" title="Lazy loading">Lazy loading</a></li>
+<li><a href="/wiki/Mock_object" title="Mock object">Mock object</a></li>
+<li><a href="/wiki/Null_object_pattern" title="Null object pattern">Null object</a></li>
+<li><a href="/wiki/Object_pool_pattern" title="Object pool pattern">Object pool</a></li>
+<li><a href="/wiki/Servant_(design_pattern)" title="Servant (design pattern)">Servant</a></li>
+<li><a href="/wiki/Twin_pattern" title="Twin pattern">Twin</a></li>
+<li><a href="/wiki/Type_Tunnel_pattern" class="mw-redirect" title="Type Tunnel pattern">Type tunnel</a></li>
+<li><a href="/wiki/Method_chaining" title="Method chaining">Method chaining</a></li>
+<li><a href="/wiki/Delegation_pattern" title="Delegation pattern">Delegation</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">Books</th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><i><a href="/wiki/Design_Patterns" title="Design Patterns">Design Patterns</a></i></li>
+<li><i><a href="/wiki/Enterprise_Integration_Patterns" title="Enterprise Integration Patterns">Enterprise Integration Patterns</a></i></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">People</th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Christopher_Alexander" title="Christopher Alexander">Christopher Alexander</a></li>
+<li><a href="/wiki/Erich_Gamma" title="Erich Gamma">Erich Gamma</a></li>
+<li><a href="/wiki/Ralph_Johnson_(computer_scientist)" title="Ralph Johnson (computer scientist)">Ralph Johnson</a></li>
+<li><a href="/wiki/John_Vlissides" title="John Vlissides">John Vlissides</a></li>
+<li><a href="/wiki/Grady_Booch" title="Grady Booch">Grady Booch</a></li>
+<li><a href="/wiki/Kent_Beck" title="Kent Beck">Kent Beck</a></li>
+<li><a href="/wiki/Ward_Cunningham" title="Ward Cunningham">Ward Cunningham</a></li>
+<li><a href="/wiki/Martin_Fowler_(software_engineer)" title="Martin Fowler (software engineer)">Martin Fowler</a></li>
+<li><a href="/wiki/Robert_C._Martin" title="Robert C. Martin">Robert Martin</a></li>
+<li><a href="/wiki/Jim_Coplien" title="Jim Coplien">Jim Coplien</a></li>
+<li><a href="/wiki/Douglas_C._Schmidt" title="Douglas C. Schmidt">Douglas Schmidt</a></li>
+<li><a href="/wiki/Linda_Rising" title="Linda Rising">Linda Rising</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">Communities</th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/The_Hillside_Group" title="The Hillside Group">The Hillside Group</a></li>
+<li><a href="/wiki/Portland_Pattern_Repository" title="Portland Pattern Repository">Portland Pattern Repository</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">See also</th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Anti-pattern" title="Anti-pattern">Anti-pattern</a></li>
+<li><a href="/wiki/Architectural_pattern" title="Architectural pattern">Architectural pattern</a></li></ul>
+</div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐api‐int.codfw.main‐7776d79f9d‐w4lzw
+Cached time: 20251102183506
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.336 seconds
+Real time usage: 0.408 seconds
+Preprocessor visited node count: 2429/1000000
+Revision size: 14812/2097152 bytes
+Post‐expand include size: 56121/2097152 bytes
+Template argument size: 5427/2097152 bytes
+Highest expansion depth: 11/100
+Expensive parser function count: 3/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 54420/5000000 bytes
+Lua time usage: 0.203/10.000 seconds
+Lua memory usage: 5365505/52428800 bytes
+Number of Wikibase entities loaded: 0/500
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  354.839      1 -total
+ 32.54%  115.478      2 Template:Reflist
+ 23.00%   81.612      1 Template:Design_Patterns_patterns
+ 22.18%   78.718      2 Template:Navbox
+ 21.47%   76.181      3 Template:Cite_book
+ 16.21%   57.519      1 Template:Short_description
+ 14.63%   51.912      5 Template:Citation_needed
+ 12.24%   43.433      5 Template:Fix
+  9.69%   34.379      2 Template:Pagetype
+  7.77%   27.560      7 Template:Cite_web
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:12501787:|#|:idhash:canonical and timestamp 20251102183506 and revision id 1307945274. Rendering was triggered because: api-parse
+ -->
+</div><noscript><img src="https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&amp;type=1x1&amp;usesul3=1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Reactor_pattern&amp;oldid=1307945274">https://en.wikipedia.org/w/index.php?title=Reactor_pattern&amp;oldid=1307945274</a>"</div></div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Concurrent_computing" title="Category:Concurrent computing">Concurrent computing</a></li><li><a href="/wiki/Category:Events_(computing)" title="Category:Events (computing)">Events (computing)</a></li><li><a href="/wiki/Category:Software_design_patterns" title="Category:Software design patterns">Software design patterns</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_with_short_description" title="Category:Articles with short description">Articles with short description</a></li><li><a href="/wiki/Category:Short_description_is_different_from_Wikidata" title="Category:Short description is different from Wikidata">Short description is different from Wikidata</a></li><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_September_2023" title="Category:Articles with unsourced statements from September 2023">Articles with unsourced statements from September 2023</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_February_2025" title="Category:Articles with unsourced statements from February 2025">Articles with unsourced statements from February 2025</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 26 August 2025, at 15:49<span class="anonymous-show">&#160;(UTC)</span>.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" title="Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International License">Creative Commons Attribution-ShareAlike 4.0 License</a>;
+additional terms may apply. By using this site, you agree to the <a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use" class="extiw" title="foundation:Special:MyLanguage/Policy:Terms of Use">Terms of Use</a> and <a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy" class="extiw" title="foundation:Special:MyLanguage/Policy:Privacy policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a rel="nofollow" class="external text" href="https://wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/Wikipedia:About">About Wikipedia</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/Wikipedia:General_disclaimer">Disclaimers</a></li>
+	<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct">Code of Conduct</a></li>
+	<li id="footer-places-developers"><a href="https://developer.wikimedia.org">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikipedia.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement">Cookie statement</a></li>
+	<li id="footer-places-mobileview"><a href="//en.wikipedia.org/w/index.php?title=Reactor_pattern&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://www.wikimedia.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/static/images/footer/wikimedia-button.svg" width="84" height="29"><img src="/static/images/footer/wikimedia.svg" width="25" height="25" alt="Wikimedia Foundation" lang="en" loading="lazy"></picture></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/w/resources/assets/poweredby_mediawiki.svg" width="88" height="31"><img src="/w/resources/assets/mediawiki_compact.svg" alt="Powered by MediaWiki" lang="en" width="25" height="25" loading="lazy"></picture></a></li>
+</ul>
+
+</footer>
+
+		</div>
+	</div> 
+</div> 
+<div class="vector-header-container vector-sticky-header-container no-font-mode-scale">
+	<div id="vector-sticky-header" class="vector-sticky-header">
+		<div class="vector-sticky-header-start">
+			<div class="vector-sticky-header-icon-start vector-button-flush-left vector-button-flush-right" aria-hidden="true">
+				<button class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-sticky-header-search-toggle" tabindex="-1" data-event-name="ui.vector-sticky-search-form.icon"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"></span>
+
+<span>Search</span>
+			</button>
+		</div>
+			
+		<div role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box">
+			<div class="vector-typeahead-search-container">
+				<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail">
+					<form action="/w/index.php" id="vector-sticky-search-form" class="cdx-search-input cdx-search-input--has-end-button">
+						<div  class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+							<div class="cdx-text-input cdx-text-input--has-start-icon">
+								<input
+									class="cdx-text-input__input mw-searchInput" autocomplete="off"
+									
+									type="search" name="search" placeholder="Search Wikipedia">
+								<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+							</div>
+							<input type="hidden" name="title" value="Special:Search">
+						</div>
+						<button class="cdx-button cdx-search-input__end-button">Search</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="vector-sticky-header-context-bar">
+				<nav aria-label="Contents" class="vector-toc-landmark">
+						
+					<div id="vector-sticky-header-toc" class="vector-dropdown mw-portlet mw-portlet-sticky-header-toc vector-sticky-header-toc vector-button-flush-left"  >
+						<input type="checkbox" id="vector-sticky-header-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-sticky-header-toc" class="vector-dropdown-checkbox "  aria-label="Toggle the table of contents"  >
+						<label id="vector-sticky-header-toc-label" for="vector-sticky-header-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet"></span>
+
+<span class="vector-dropdown-label-text">Toggle the table of contents</span>
+						</label>
+						<div class="vector-dropdown-content">
+					
+						<div id="vector-sticky-header-toc-unpinned-container" class="vector-unpinned-container">
+						</div>
+					
+						</div>
+					</div>
+			</nav>
+				<div class="vector-sticky-header-context-bar-primary" aria-hidden="true" ><span class="mw-page-title-main">Reactor pattern</span></div>
+			</div>
+		</div>
+		<div class="vector-sticky-header-end" aria-hidden="true">
+			<div class="vector-sticky-header-icons">
+				<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-talk-sticky-header" tabindex="-1" data-event-name="talk-sticky-header"><span class="vector-icon mw-ui-icon-speechBubbles mw-ui-icon-wikimedia-speechBubbles"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-subject-sticky-header" tabindex="-1" data-event-name="subject-sticky-header"><span class="vector-icon mw-ui-icon-article mw-ui-icon-wikimedia-article"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-history-sticky-header" tabindex="-1" data-event-name="history-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-history mw-ui-icon-wikimedia-wikimedia-history"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only mw-watchlink" id="ca-watchstar-sticky-header" tabindex="-1" data-event-name="watch-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-star mw-ui-icon-wikimedia-wikimedia-star"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only reading-lists-bookmark" id="ca-bookmark-sticky-header" tabindex="-1" data-event-name="watch-sticky-bookmark"><span class="vector-icon mw-ui-icon-wikimedia-bookmarkOutline mw-ui-icon-wikimedia-wikimedia-bookmarkOutline"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-edit-sticky-header" tabindex="-1" data-event-name="wikitext-edit-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-wikiText mw-ui-icon-wikimedia-wikimedia-wikiText"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-ve-edit-sticky-header" tabindex="-1" data-event-name="ve-edit-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-edit mw-ui-icon-wikimedia-wikimedia-edit"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-viewsource-sticky-header" tabindex="-1" data-event-name="ve-edit-protected-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-editLock mw-ui-icon-wikimedia-wikimedia-editLock"></span>
+
+<span></span>
+			</a>
+		</div>
+			<div class="vector-sticky-header-buttons">
+				<button class="cdx-button cdx-button--weight-quiet mw-interlanguage-selector" id="p-lang-btn-sticky-header" tabindex="-1" data-event-name="ui.dropdown-p-lang-btn-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-language mw-ui-icon-wikimedia-wikimedia-language"></span>
+
+<span>9 languages</span>
+			</button>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive" id="ca-addsection-sticky-header" tabindex="-1" data-event-name="addsection-sticky-header"><span class="vector-icon mw-ui-icon-speechBubbleAdd-progressive mw-ui-icon-wikimedia-speechBubbleAdd-progressive"></span>
+
+<span>Add topic</span>
+			</a>
+		</div>
+			<div class="vector-sticky-header-icon-end">
+				<div class="vector-user-links">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mw-portlet mw-portlet-dock-bottom emptyPortlet" id="p-dock-bottom">
+	<ul>
+		
+	</ul>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgHostname":"mw-web.codfw.main-75dfb4487d-gbgwv","wgBackendResponseTime":183,"wgPageParseReport":{"limitreport":{"cputime":"0.336","walltime":"0.408","ppvisitednodes":{"value":2429,"limit":1000000},"revisionsize":{"value":14812,"limit":2097152},"postexpandincludesize":{"value":56121,"limit":2097152},"templateargumentsize":{"value":5427,"limit":2097152},"expansiondepth":{"value":11,"limit":100},"expensivefunctioncount":{"value":3,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":54420,"limit":5000000},"entityaccesscount":{"value":0,"limit":500},"timingprofile":["100.00%  354.839      1 -total"," 32.54%  115.478      2 Template:Reflist"," 23.00%   81.612      1 Template:Design_Patterns_patterns"," 22.18%   78.718      2 Template:Navbox"," 21.47%   76.181      3 Template:Cite_book"," 16.21%   57.519      1 Template:Short_description"," 14.63%   51.912      5 Template:Citation_needed"," 12.24%   43.433      5 Template:Fix","  9.69%   34.379      2 Template:Pagetype","  7.77%   27.560      7 Template:Cite_web"]},"scribunto":{"limitreport-timeusage":{"value":"0.203","limit":"10.000"},"limitreport-memusage":{"value":5365505,"limit":52428800}},"cachereport":{"origin":"mw-api-int.codfw.main-7776d79f9d-w4lzw","timestamp":"20251102183506","ttl":2592000,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Reactor pattern","url":"https:\/\/en.wikipedia.org\/wiki\/Reactor_pattern","sameAs":"http:\/\/www.wikidata.org\/entity\/Q1122024","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q1122024","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2007-07-28T20:40:05Z","dateModified":"2025-08-26T15:49:00Z","headline":"event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs; the service handler then demultiplexes the incoming requests and dispatches them synchronously to the associated request handlers"}</script>
+</body>
+</html>

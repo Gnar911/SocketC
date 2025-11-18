@@ -1,0 +1,297 @@
+{
+  "poinumber": "1",
+  "firstpoi": {
+    "name": "gufo （グーフォ） 中野 野方 ペット・絵本・雑貨",
+    "latitude": "35.7193889",
+    "longitude": "139.6534237",
+    "text": "poi12222 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "secondpoi": {
+    "name": "paw's living カメイドクロック店",
+    "latitude": "35.6959724",
+    "longitude": "139.8292362",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "thirdpoi": {
+    "name": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7297574",
+    "longitude": "139.6571914",
+    "text": "poi23 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img4.jpg,
+  "status": "0"
+}
+
+
+
+{
+"text": "description",
+"imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img4.jpg",
+"status": "1"
+}
+
+ 
+
+C:\26062025_Android_app\10072025-VerifyOutput\30092025-Craie2-dev-phase\
+
+
+
+
+
+
+NOTE USE:
+1.
+
+
+
+{
+    "poinumber": "3",
+    "firstpoi": {
+        "name": "poi1",
+        "latitude": "11.1111",
+        "longitude": "111.1111",
+        "text": "poi1 description",
+        "likelihood": "50",
+        "registable": "1"
+    },
+    "secondpoi": {
+        "name": "poi2",
+        "latitude": "22.2222",
+        "longitude": "122.2222",
+        "text": "poi2 description",
+        "likelihood": "50",
+        "registable": "1"
+    },
+    "thirdpoi": {
+        "name": "poi3",
+        "latitude": "33.3333",
+        "longitude": "133.3333",
+        "text": "poi2 description",
+        "likelihood": "50",
+        "registable": "1"
+    },
+    "imagepath": "C:\Users\E354527\Downloads\\ar_1.png",
+    "status": "0"
+}
+
+
+
+{
+  "poinumber": "1",
+  "firstpoi": {
+    "name": "（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7193889",
+    "longitude": "139.6534237",
+    "text": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "secondpoi": {
+    "name": "paw's living カメイドクロック店",
+    "latitude": "35.6959724",
+    "longitude": "139.8292362",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+
+  "thirdpoi": {
+    "name": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7297574",
+    "longitude": "139.6571914",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "imagepath": "C:\\Users\\E354527\\Downloads\\ddd.png",
+  "status": "1"
+}
+
+
+{"firstpoi":{"latitude":"","likelihood":"0","longitude":"","name":"サーバー通信に失敗しましsssssssssssssssssssssssバー通信に失敗しまバー通信に失敗しまバー通信に失敗しまた。","registable":"0","text":"腰越ラッコ公園は、観光スラムダンクで有名な場所は、観光名所として知られていスラムダンクで有名な場所は、観光名所として知られてい"},"poinumber":"1","secondpoi":{"latitude":"","likelihood":"0","longitude":"","name":"","registable":"0","text":""},"thirdpoi":{"latitude":"","likelihood":"0","longitude":"","name":"","registable":"0","text":""},"imagepath":"C:\\Users\\E354527\\Downloads\\aaa.png","status":1}
+
+{"firstpoi":{"latitude":"","likelihood":"0","longitude":"","name":"サーバー通信に失敗しましaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaた。","registable":"0","text":""},"poinumber":"1","secondpoi":{"latitude":"","likelihood":"0","longitude":"","name":"","registable":"0","text":""},"thirdpoi":{"latitude":"","likelihood":"0","longitude":"","name":"","registable":"0","text":""},"imagepath":"C:\\Users\\E354527\\Downloads\\ar_1.png","status":0}
+]
+
+
+
+
+1. Update name failed!!!
+ 
+
+
+
+
+
+
+[operator ()][307] Reading file at C:\Users\E354527\Downloads\bbb.png
+[send_package][1721] Sending msg to all sockets with header type: SendPoiListData
+[send_package][1731] Sent msg to all sockets with header type: SendPoiListData
+[operator ()][1354] [Success] sent package type: SendPoiListData
+
+
+[operator ()][307] Reading file at user4.png
+[send_package][1721] Sending msg to all sockets with header type: SendPoiListData
+[send_package][1731] Sent msg to all sockets with header type: SendPoiListData
+[operator ()][1354] [Success] sent package type: SendPoiListData
+[operator ()][1354] [Success] sent package type: SendPoiListData
+
+[send_package][1721] Sending msg to all sockets with header type: ResponseIdentity
+[send_package][1731] Sent msg to all sockets with header type: ResponseIdentity
+[operator ()][1354] [Success] sent package type: ResponseIdentity
+[operator ()][307] Reading file at C:\Users\E354527\Downloads\bbb.png
+
+
+
+
+imagepath":"C:/workspace/picture/gesture/Image_1761912618.png"
+
+
+{
+  "poinumber": 0,
+  "firstpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "secondpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "thirdpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "imagepath": "C:\\Users\\E354527\\Downloads\\bbb.png",
+  "status": 0
+}
+
+{"firstpoi":{"latitude":"35.306762299999995","likelihood":"50","longitude":"139.5019008","name":"腰越ラッコ公園aaaaa","registable":"0","text":"腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は腰越ラッコ公園は"},"poinumber":"2","secondpoi":{"latitude":"35.3065953","likelihood":"50","longitude":"139.5021002","name":"スラムダンクで有名な場所","registable":"0","text":"スラムダンクで有名な場所は、観光名所として知られています。"},"thirdpoi":{"latitude":"","likelihood":"0","longitude":"","name":"","registable":"0","text":""},"imagepath":"C:\\Users\\E354527\\Downloads\\bbb.png","status":1}
+
+
+
+
+
+
+
+
+
+
+{
+  "poinumber": 0,
+  "firstpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "secondpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "thirdpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "imagepath": "C:\\Users\\E354527\\Downloads\\bbb.png",
+  "status": 0
+}
+
+
+{"firstpoi":{"latitude":"35.306762299999995","likelihood":"50","longitude":"139.5019008","name":"腰越ラッコ公園aaaaa","registable":"0","text":"腰越ラッコ公園は、観光名所として知られる公園です。"},"poinumber":"2","secondpoi":{"latitude":"35.3065953","likelihood":"50","longitude":"139.5021002","name":"スラムダンクで有名な場所","registable":"0","text":"スラムダンクで有名な場所は、観光名所として知られています。"},"thirdpoi":{"latitude":"","likelihood":"0","longitude":"","name":"","registable":"0","text":""},"imagepath":"C:\\Users\\E354527\\Downloads\\eee.png","status":1}
+
+
+
+
+
+
+{
+  "poinumber": "1",
+  "firstpoi": {
+    "name": "（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7193889",
+    "longitude": "139.6534237",
+    "text": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "secondpoi": {
+    "name": "paw's living カメイドクロック店",
+    "latitude": "35.6959724",
+    "longitude": "139.8292362",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+
+  "thirdpoi": {
+    "name": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7297574",
+    "longitude": "139.6571914",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img4.jpg",
+  "status": "1"
+}
+
+{
+  "poinumber": 0,
+  "firstpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "secondpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "thirdpoi": {
+    "name": "",
+    "latitude": "",
+    "longitude": "",
+    "text": "",
+    "likelihood": 0,
+    "registable": 0
+  },
+  "imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img2.png",
+  "status": 0
+}
+
+
+

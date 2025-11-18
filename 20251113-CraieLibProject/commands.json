@@ -1,0 +1,47 @@
+{
+  "driving_state": 2,
+  "poi_list":
+  {
+  "poinumber": "1",
+  "firstpoi": {
+    "name": "gufo （グーフォ） 中野 野方 ペット・絵本・雑貨",
+    "latitude": "35.7193889",
+    "longitude": "139.6534237",
+    "text": "poi12222 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "secondpoi": {
+    "name": "paw's living カメイドクロック店",
+    "latitude": "35.6959724",
+    "longitude": "139.8292362",
+    "text": "poi2 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "thirdpoi": {
+    "name": "UPMARKET PIZZA&CAFE（アップマーケット ピッツァ＆カフェ）",
+    "latitude": "35.7297574",
+    "longitude": "139.6571914",
+    "text": "poi23 description",
+    "likelihood": "50",
+    "registable": "1"
+  },
+  "imagepath": "/home/gnar911/Desktop/20251106-SocketC/server_library_test_kit/img4.jpg",
+  "status": "0"
+},
+
+  "volume_entire_vehicle": 40,
+  "nanoe": 1,
+  "massage": {
+    "driver": 1,
+    "front_left": 0,
+    "rear_left": 1,
+    "rear_right": 0,
+    "strength_driver": 3,
+    "pattern_driver": 2
+  },
+
+
+}
+
